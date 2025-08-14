@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Stack Developer Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #0f172a;
+            color: #e2e8f0;
+            overflow-x: hidden;
+        }
+
+        #animated-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.2;
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .tech-icon {
+            transition: all 0.3s ease;
+        }
+
+        .tech-icon:hover {
+            transform: translateY(-5px);
+            filter: drop-shadow(0 5px 15px rgba(59, 130, 246, 0.7));
+        }
+
+        .project-card {
+            transition: all 0.3s ease;
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+            border-color: #3b82f6;
+        }
+
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: #3b82f6;
+            bottom: -2px;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover:after {
+            width: 100%;
+        }
+
+        .contact-input {
+            background: rgba(15, 23, 42, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .contact-input:focus {
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated Background -->
+    <canvas id="animated-bg"></canvas>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full py-6 px-4 md:px-12 lg:px-24 z-50 bg-opacity-90 bg-gray-900">
+        <div class="flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold gradient-text">PORTFOLIO</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="nav-link text-white">Home</a>
+                <a href="#about" class="nav-link text-white">About</a>
+                <a href="#skills" class="nav-link text-white">Skills</a>
+                <a href="#projects" class="nav-link text-white">Projects</a>
+                <a href="#contact" class="nav-link text-white">Contact</a>
+            </div>
+            <button class="md:hidden text-white text-2xl">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center pt-24 px-4 md:px-12 lg:px-24">
+        <div class="w-full">
+            <div class="text-center md:text-left">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6">Hi, I'm <span class="gradient-text">Raynaldy</span></h1>
+                <h2 class="text-2xl md:text-4xl mb-8">Full Stack Developer</h2>
+                <p class="text-lg md:text-xl mb-12 max-w-2xl mx-auto md:mx-0">I build beautiful, responsive web applications with modern technologies. Let's create something amazing together!</p>
+                <div class="flex space-x-6 justify-center md:justify-start">
+                    <a href="#projects" class="px-8 py-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg font-semibold hover:opacity-90 transition">View Work</a>
+                    <a href="#contact" class="px-8 py-3 border border-white rounded-lg font-semibold hover:bg-white hover:text-gray-900 transition">Contact Me</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 px-4 md:px-12 lg:px-24 bg-gray-900 bg-opacity-50">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center gradient-text">About Me</h2>
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="w-full md:w-1/3 flex justify-center">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full blur-lg opacity-70 animate-pulse"></div>
+                        <img src="https://i.ibb.co.com/BHsvg587/profile-jpg-Copy-3.jpg" alt="Professional portrait of a Full Stack Developer in a modern office setting" class="relative z-10 w-64 h-64 rounded-full object-cover border-4 border-gray-800" />
+                    </div>
+                </div>
+                <div class="w-full md:w-2/3">
+                    <p class="text-lg mb-6">I'm a passionate network engineer with over three years of experience building networks from scratch. My expertise includes extensive network development, ensuring seamless integration between clients and servers.
+                    </p>
+                    <p class="text-lg mb-6">I'm skilled at building networks, networking, cabling, troubleshooting, jointing, and server maintenance. I'm constantly learning new technologies to stay ahead of the curve in this rapidly evolving industry.</p>
+                    <p class="text-lg mb-8">Outside of coding, you can find me contributing to open-source projects, mentoring junior developers, or exploring new coffee shops in my city.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="px-6 py-2 bg-blue-600 rounded-lg font-semibold hover:bg-blue-700 transition">Download CV</a>
+                        <a href="#contact" class="px-6 py-2 border border-blue-500 rounded-lg font-semibold hover:bg-blue-500 hover:bg-opacity-10 transition">Hire Me</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-24 px-4 md:px-12 lg:px-24">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center gradient-text">My Skills</h2>
+            
+            <div class="mb-16">
+                <h3 class="text-xl font-semibold mb-6">Frontend Development</h3>
+                <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-6">
+                    <div class="flex flex-col items-center tech-icon">
+                        <i class="fab fa-html5 text-4xl text-orange-500 mb-2"></i>
+                        <span>HTML5</span>
+                    </div>
+                    <div class="flex flex-col items-center tech-icon">
+                        <i class="fab fa-css3-alt text-4xl text-blue-500 mb-2"></i>
+                        <span>CSS3</span>
+                    </div>
+                    <div class="flex flex-col items-center tech-icon">
+                        <i class="fab fa-js text-4xl text-yellow-400 mb-2"></i>
+                        <span>JavaScript</span>
+                    </div>
+                    <div class="flex flex-col items-center tech-icon">
+                        <i class="fab fa-react text-4xl text-blue-400 mb-2"></i>
+                        <span>React</span>
+                    </div>
+                    <div class="flex flex-col items-center tech-icon">
+                        <i class="fab fa-vuejs text-4xl text-green-400 mb-2"></i>
+                        <span>Vue.js</span>
+                    </div>
+                    <div class="flex flex-col items-center tech-icon">
+                        <i class="fab fa-angular text-4xl text-red-500 mb-2"></i>
+                        <span>Angular</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-16">
+                <h3 class="text-xl font-semibold mb-6">Backend Development</h3>
+                <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-6">
+                    <div class="flex flex-col items-center tech-icon">
+                        <i class="fab fa-node-js text-4xl text-green-600 mb-2"></i>
+                        <span>Node.js</span>
+                    </div>
+                    <div class="flex flex-col items-center tech-icon">
+                        <i class="fab fa-python text-4xl text-blue-400 mb-2"></i>
+                        <span>Python</span>
+                    </div>
+                    <div class="flex flex-col items-center tech-icon">
+                        <img src="https://i.ibb.co.com/ccyQ7dFd/java.png" alt="Java logo icon" class="w-10 h-10 mb-2">
+                        <span>Java</span>
+                    </div>
+                    <div class="flex flex-col items-center tech-icon">
+                        <i class="fas fa-database text-4xl text-blue-300 mb-2"></i>
+                        <span>SQL</span>
+                    </div>
+                    <div class="flex flex-col items-center tech-icon">
+                        <i class="fab fa-laravel text-4xl text-red-500 mb-2"></i>
+                        <span>Laravel</span>
+                    </div>
+                    <div class="flex flex-col items-center tech-icon">
+                        <img src="https://i.ibb.co.com/SXrrCL55/dj.jpg" alt="Django logo icon" class="w-10 h-10 mb-2">
+                        <span>Django</span>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="text-xl font-semibold mb-6">DevOps & Others</h3>
+                <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-6">
+                    <div class="flex flex-col items-center tech-icon">
+                        <i class="fab fa-docker text-4xl text-blue-300 mb-2"></i>
+                        <span>Docker</span>
+                    </div>
+                    <div class="flex flex-col items-center tech-icon">
+                        <i class="fab fa-aws text-4xl text-orange-500 mb-2"></i>
+                        <span>AWS</span>
+                    </div>
+                    <div class="flex flex-col items-center tech-icon">
+                        <i class="fab fa-git-alt text-4xl text-orange-500 mb-2"></i>
+                        <span>Git</span>
+                    </div>
+                    <div class="flex flex-col items-center tech-icon">
+                        <img src="Kubernetes.jpg" alt="Kubernetes logo icon" class="w-10 h-10 mb-2">
+                        <span>Kubernetes</span>
+                    </div>
+                    <div class="flex flex-col items-center tech-icon">
+                        <img src="https://i.ibb.co.com/F4Nf7D0C/GraphQL.png" alt="GraphQL logo icon" class="w-10 h-10 mb-2">
+                        <span>GraphQL</span>
+                    </div>
+                    <div class="flex flex-col items-center tech-icon">
+                        <img src="https://i.ibb.co.com/S77xQs3C/redis-j-g.png" alt="Redis logo icon" class="w-10 h-10 mb-2">
+                        <span>Redis</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-24 px-4 md:px-12 lg:px-24 bg-gray-900 bg-opacity-50">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center gradient-text">My Projects</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="project-card rounded-lg overflow-hidden shadow-lg p-6">
+                    <div class="h-48 overflow-hidden mb-4 rounded-lg">
+                        <img src="https://i.ibb.co.com/7dS13Wp7/dashboard.webp" alt="Dashboard interface of an e-commerce analytics platform with charts and metrics" class="w-full h-full object-cover" />
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">E-commerce Analytics Dashboard</h3>
+                    <p class="text-gray-400 mb-4">A comprehensive analytics platform for online stores with real-time data visualization.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">React</span>
+                        <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">Node.js</span>
+                        <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">MongoDB</span>
+                    </div>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-blue-400 hover:text-blue-300">Live Demo</a>
+                        <a href="#" class="text-purple-400 hover:text-purple-300">View Code</a>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card rounded-lg overflow-hidden shadow-lg p-6">
+                    <div class="h-48 overflow-hidden mb-4 rounded-lg">
+                        <img src="https://i.ibb.co.com/SwdJxDy1/task.jpg" alt="Mobile app interface for a task management application with colorful cards" class="w-full h-full object-cover" />
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Task Management App</h3>
+                    <p class="text-gray-400 mb-4">A collaborative task management solution with drag-and-drop functionality.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">Vue.js</span>
+                        <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">Python</span>
+                        <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">Django</span>
+                        <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">Docker</span>
+                    </div>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-blue-400 hover:text-blue-300">Live Demo</a>
+                        <a href="#" class="text-purple-400 hover:text-purple-300">View Code</a>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card rounded-lg overflow-hidden shadow-lg p-6">
+                    <div class="h-48 overflow-hidden mb-4 rounded-lg">
+                        <img src="https://i.ibb.co.com/vx0j63rZ/social.webp" alt="Social media platform interface showing user profiles and posts" class="w-full h-full object-cover" />
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Social Media Platform</h3>
+                    <p class="text-gray-400 mb-4">A full-featured social network with user profiles, posts, and real-time chat.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">React Native</span>
+                        <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">GraphQL</span>
+                        <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">PostgreSQL</span>
+                        <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">AWS</span>
+                    </div>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-blue-400 hover:text-blue-300">Live Demo</a>
+                        <a href="#" class="text-purple-400 hover:text-purple-300">View Code</a>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card rounded-lg overflow-hidden shadow-lg p-6">
+                    <div class="h-48 overflow-hidden mb-4 rounded-lg">
+                        <img src="https://i.ibb.co.com/bD5tQWg/ai.png" alt="AI-powered chatbot interface with conversation history and response suggestions" class="w-full h-full object-cover" />
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">AI Chatbot Assistant</h3>
+                    <p class="text-gray-400 mb-4">A conversational AI assistant with natural language processing capabilities.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">Python</span>
+                        <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">TensorFlow</span>
+                        <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">FastAPI</span>
+                    </div>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-blue-400 hover:text-blue-300">Live Demo</a>
+                        <a href="#" class="text-purple-400 hover:text-purple-300">View Code</a>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="project-card rounded-lg overflow-hidden shadow-lg p-6">
+                    <div class="h-48 overflow-hidden mb-4 rounded-lg">
+                        <img src="https://i.ibb.co.com/mVTRJfp8/crypto.png" alt="Cryptocurrency trading platform interface with price charts and order books" class="w-full h-full object-cover" />
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Crypto Trading Platform</h3>
+                    <p class="text-gray-400 mb-4">A high-frequency cryptocurrency trading system with real-time market data.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">Vue.js</span>
+                        <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">Java</span>
+                        <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">Spring Boot</span>
+                        <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">Kafka</span>
+                    </div>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-blue-400 hover:text-blue-300">Live Demo</a>
+                        <a href="#" class="text-purple-400 hover:text-purple-300">View Code</a>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="project-card rounded-lg overflow-hidden shadow-lg p-6">
+                    <div class="h-48 overflow-hidden mb-4 rounded-lg">
+                        <img src="https://i.ibb.co.com/G38frLpf/healthcare.jpg" alt="Healthcare application interface showing patient records and appointment scheduling" class="w-full h-full object-cover" />
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Healthcare Management System</h3>
+                    <p class="text-gray-400 mb-4">A HIPAA-compliant system for patient records management and scheduling.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">Angular</span>
+                        <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">C#</span>
+                        <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">.NET Core</span>
+                        <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">SQL Server</span>
+                    </div>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-blue-400 hover:text-blue-300">Live Demo</a>
+                        <a href="#" class="text-purple-400 hover:text-purple-300">View Code</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 px-4 md:px-12 lg:px-24">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center gradient-text">Let's Connect</h2>
+            
+            <div class="flex flex-col md:flex-row gap-12">
+                <div class="w-full md:w-1/2">
+                    <h3 class="text-xl font-semibold mb-6">Get in Touch</h3>
+                    <p class="mb-8">Have a project in mind or want to discuss potential opportunities? Feel free to reach out!</p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center mr-4">
+                                <i class="fas fa-envelope text-white"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-400">Email</p>
+                                <p>raynaldayraynal@gmail.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center mr-4">
+                                <i class="fas fa-phone-alt text-white"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-400">Phone</p>
+                                <p>+62 (881) 0266 64117</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center mr-4">
+                                <i class="fas fa-map-marker-alt text-white"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-400">Location</p>
+                                <p>Sidoarjo, Jawa Timur</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <h4 class="font-semibold mb-4">Follow Me</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-600 transition">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-400 transition">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-pink-600 transition">
+                                <i class="fab fa-dribbble"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-500 transition">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="w-full md:w-1/2">
+                    <form class="space-y-6">
+                        <div>
+                            <label for="name" class="block mb-2">Your Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-3 rounded-lg contact-input focus:outline-none">
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block mb-2">Email Address</label>
+                            <input type="email" id="email" class="w-full px-4 py-3 rounded-lg contact-input focus:outline-none">
+                        </div>
+                        
+                        <div>
+                            <label for="subject" class="block mb-2">Subject</label>
+                            <input type="text" id="subject" class="w-full px-4 py-3 rounded-lg contact-input focus:outline-none">
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block mb-2">Message</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-3 rounded-lg contact-input focus:outline-none"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg font-semibold hover:opacity-90 transition">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 px-4 md:px-12 lg:px-24 bg-gray-900 bg-opacity-70">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <a href="#" class="text-2xl font-bold gradient-text">PORTFOLIO</a>
+                </div>
+                <div class="text-center md:text-right">
+                    <p>© 2025 Raynaldy Portfolio. All rights reserved.</p>
+                    <p class="text-sm text-gray-500 mt-2">Made with ❤️ by Full Stack Developer</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Animated Background
+        const canvas = document.getElementById('animated-bg');
+        const ctx = canvas.getContext('2d');
+
+        // Set canvas size
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        // Particles array
+        let particles = [];
+
+        // Particle class
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 3 + 1;
+                this.speedX = Math.random() * 3 - 1.5;
+                this.speedY = Math.random() * 3 - 1.5;
+                this.color = `hsl(${Math.random() * 60 + 200}, 70%, 50%)`;
+            }
+
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+
+                // Reset particles when they go off screen
+                if (this.x > canvas.width + 5 || this.x < -5 || this.y > canvas.height + 5 || this.y < -5) {
+                    this.x = Math.random() * canvas.width;
+                    this.y = Math.random() * canvas.height;
+                }
+            }
+
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fillStyle = this.color;
+                ctx.fill();
+            }
+        }
+
+        // Create particles
+        function init() {
+            particles = [];
+            for (let i = 0; i < canvas.width / 3; i++) {
+                particles.push(new Particle());
+            }
+        }
+
+        // Animation loop
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            for (let i = 0; i < particles.length; i++) {
+                particles[i].update();
+                particles[i].draw();
+                
+                // Connect particles that are close
+                for (let j = i + 1; j < particles.length; j++) {
+                    const distance = Math.sqrt(
+                        Math.pow(particles[i].x - particles[j].x, 2) + 
+                        Math.pow(particles[i].y - particles[j].y, 2)
+                    );
+                    
+                    if (distance < 100) {
+                        ctx.strokeStyle = `rgba(200, 200, 255, ${0.5 - distance / 200})`;
+                        ctx.lineWidth = 0.5;
+                        ctx.beginPath();
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+            
+            requestAnimationFrame(animate);
+        }
+
+        // Handle window resize
+        window.addEventListener('resize', function() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            init();
+        });
+
+        // Start animation
+        init();
+        animate();
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('button.md\\:hidden');
+        const navLinks = document.querySelector('nav .hidden');
+        
+        mobileMenuBtn.addEventListener('click', function() {
+            navLinks.classList.toggle('hidden');
+            navLinks.classList.toggle('flex');
+            navLinks.classList.toggle('flex-col');
+            navLinks.classList.toggle('absolute');
+            navLinks.classList.toggle('top-20');
+            navLinks.classList.toggle('right-4');
+            navLinks.classList.toggle('bg-gray-900');
+            navLinks.classList.toggle('p-4');
+            navLinks.classList.toggle('rounded-lg');
+            navLinks.classList.toggle('shadow-xl');
+        });
+    </script>
+</body>
+</html>
